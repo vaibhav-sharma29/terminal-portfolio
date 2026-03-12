@@ -171,20 +171,14 @@ body {
     height: 150px;
     border-radius: 50%;
     border: 3px solid var(--primary);
-    box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
     object-fit: cover;
-    animation: profileGlow 2s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
 
-@keyframes profileGlow {
-    0%, 100% { 
-        box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary);
-        transform: scale(1);
-    }
-    50% { 
-        box-shadow: 0 0 30px var(--primary), 0 0 60px var(--primary), 0 0 80px var(--primary);
-        transform: scale(1.05);
-    }
+.profile-photo img:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.7);
+    transform: scale(1.02);
 }
 
 @keyframes fadeIn {
@@ -247,6 +241,34 @@ body {
 .loading {
     color: var(--primary);
     text-shadow: var(--glow);
+}
+
+/* Animated Loading Bar */
+.loading-bar {
+    display: inline-block;
+    width: 150px;
+    height: 8px;
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-progress {
+    display: block;
+    height: 100%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+    width: 0;
+    animation: loadingAnimation 2s ease-in-out forwards;
+}
+
+@keyframes loadingAnimation {
+    0% { width: 0%; }
+    100% { width: 100%; }
 }
 
 .success {
