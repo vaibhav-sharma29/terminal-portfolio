@@ -52,10 +52,10 @@
             <div class="welcome-text">
                 <p class="typing-text"></p>
                 <div class="boot-sequence">
-                    <p>> Initializing 3D environment... <span class="loading-bar"><span class="loading-progress"></span></span></p>
-                    <p>> Loading terminal interface... <span class="loading-bar"><span class="loading-progress" style="animation-delay: 0.5s;"></span></span></p>
-                    <p>> Establishing connection... <span class="loading-bar"><span class="loading-progress" style="animation-delay: 1s;"></span></span></p>
-                    <p class="success">> System ready! Welcome to the Matrix.</p>
+                    <p>> Initializing 3D environment... <span class="loading-bar"><span class="loading-progress" data-progress="1"></span></span> <span class="percent" id="percent1">0%</span></p>
+                    <p>> Loading terminal interface... <span class="loading-bar"><span class="loading-progress" data-progress="2"></span></span> <span class="percent" id="percent2">0%</span></p>
+                    <p>> Establishing connection... <span class="loading-bar"><span class="loading-progress" data-progress="3"></span></span> <span class="percent" id="percent3">0%</span></p>
+                    <p class="success" id="ready-msg" style="opacity: 0;">> System ready! Welcome to the Matrix.</p>
                 </div>
             </div>
             <button class="start-btn" onclick="startTerminal()">

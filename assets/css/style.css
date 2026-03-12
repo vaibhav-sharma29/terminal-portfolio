@@ -155,14 +155,14 @@ body {
 
 /* ===== WELCOME SCREEN ===== */
 .welcome-screen {
-    padding: 60px 40px;
+    padding: 40px 40px;
     text-align: center;
     animation: fadeIn 1s ease-in;
 }
 
 /* Profile Photo */
 .profile-photo {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     animation: fadeIn 1.5s ease-in;
 }
 
@@ -191,7 +191,7 @@ body {
     font-size: 10px;
     line-height: 1.2;
     text-shadow: var(--glow);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     animation: glowPulse 2s ease-in-out infinite;
 }
 
@@ -226,7 +226,7 @@ body {
 .boot-sequence {
     text-align: left;
     max-width: 600px;
-    margin: 30px auto;
+    margin: 15px auto;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
@@ -263,12 +263,14 @@ body {
     background: var(--primary);
     box-shadow: 0 0 10px var(--primary);
     width: 0;
-    animation: loadingAnimation 2s ease-in-out forwards;
 }
 
-@keyframes loadingAnimation {
-    0% { width: 0%; }
-    100% { width: 100%; }
+.percent {
+    display: inline-block;
+    min-width: 40px;
+    color: var(--primary);
+    font-weight: bold;
+    margin-left: 10px;
 }
 
 .success {

@@ -297,6 +297,47 @@ function typeText() {
 // Start typing animation
 setTimeout(typeText, 1000);
 
+// Animated Loading Bars with Percentage
+function animateLoadingBar(barNumber, delay) {
+    setTimeout(() => {
+        const progressBar = document.querySelector(`[data-progress="${barNumber}"]`);
+        const percentElement = document.getElementById(`percent${barNumber}`);
+        
+        if (!progressBar || !percentElement) return;
+        
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 2;
+            if (progress > 100) progress = 100;
+            
+            progressBar.style.width = progress + '%';
+            percentElement.textContent = progress + '%';
+            
+            if (progress >= 100) {
+                clearInterval(interval);
+                
+                // Show ready message after all bars complete
+                if (barNumber === 3) {
+                    setTimeout(() => {
+                        const readyMsg = document.getElementById('ready-msg');
+                        if (readyMsg) {
+                            readyMsg.style.opacity = '1';
+                            readyMsg.style.transition = 'opacity 0.5s';
+                        }
+                    }, 300);
+                }
+            }
+        }, 30); // Speed control - 30ms per update
+    }, delay);
+}
+
+// Start loading animations on page load
+window.addEventListener('DOMContentLoaded', () => {
+    animateLoadingBar(1, 500);   // First bar starts after 0.5s
+    animateLoadingBar(2, 2000);  // Second bar starts after 2s
+    animateLoadingBar(3, 3500);  // Third bar starts after 3.5s
+});
+
 // Loading Screen
 window.addEventListener('load', () => {
     setTimeout(() => {
